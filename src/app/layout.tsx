@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://firmo.vercel.app"),
+  metadataBase: new URL("https://firmo-site.vercel.app"),
   title: "Firmo — Automation, QA & Web Development",
   description:
     "Precision-driven automation, QA testing, and web development. We build reliable systems that scale your business.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Firmo — Automation, QA & Web Development",
     description:
       "Precision-driven automation, QA testing, and web development. We build reliable systems that scale your business.",
-    url: "https://firmo.vercel.app",
+    url: "https://firmo-site.vercel.app",
     siteName: "Firmo",
     locale: "en_US",
     type: "website",
