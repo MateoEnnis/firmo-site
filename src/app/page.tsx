@@ -435,41 +435,116 @@ function Contact() {
   return (
     <section id="contact" className="glow-seam relative border-t border-border px-6 py-36">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[100px]" aria-hidden="true" />
-      <div className="relative z-10 mx-auto max-w-2xl text-center">
+      <div className="relative z-10 mx-auto max-w-3xl">
         <FadeIn>
-          <p className="mb-3 font-mono text-sm tracking-widest text-accent-dim uppercase">
+          <p className="mb-3 text-center font-mono text-sm tracking-widest text-accent-dim uppercase">
             Let&apos;s talk
           </p>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-5xl">
             Ready to automate,
             <br />
             <span className="gradient-text">test, or build?</span>
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="mb-12 text-lg text-muted">
+          <p className="mb-12 text-center text-lg text-muted">
             Tell me about your project. I&apos;ll get back to you within 24
             hours with a clear, no-BS proposal.
           </p>
         </FadeIn>
+
         <FadeIn delay={0.3}>
+          <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            className="mx-auto mb-12 max-w-xl space-y-5"
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="mb-1.5 block font-mono text-xs tracking-wider text-muted-soft uppercase">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-soft transition-colors focus:border-accent focus:outline-none"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="mb-1.5 block font-mono text-xs tracking-wider text-muted-soft uppercase">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-soft transition-colors focus:border-accent focus:outline-none"
+                  placeholder="you@company.com"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="service" className="mb-1.5 block font-mono text-xs tracking-wider text-muted-soft uppercase">
+                Service
+              </label>
+              <select
+                id="service"
+                name="service"
+                className="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-muted transition-colors focus:border-accent focus:outline-none"
+              >
+                <option value="automation">Automation (n8n / AI)</option>
+                <option value="qa">QA &amp; Testing</option>
+                <option value="webdev">Web Development</option>
+                <option value="other">Other / Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="message" className="mb-1.5 block font-mono text-xs tracking-wider text-muted-soft uppercase">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={4}
+                className="w-full resize-none rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-soft transition-colors focus:border-accent focus:outline-none"
+                placeholder="Tell me about your project — what problem are you trying to solve?"
+              />
+            </div>
+            <button
+              type="submit"
+              className="cta-pulse w-full rounded-full bg-accent px-8 py-3.5 font-semibold text-background transition-all hover:bg-accent-hover hover:shadow-[0_0_30px_var(--accent-glow)]"
+            >
+              Send message
+            </button>
+          </form>
+        </FadeIn>
+
+        <FadeIn delay={0.4}>
+          <p className="mb-4 text-center font-mono text-xs tracking-wider text-muted-soft uppercase">
+            Or reach out directly
+          </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="mailto:mateoennis777@gmail.com"
-              className="flex items-center gap-2.5 rounded-full bg-accent px-8 py-3.5 font-semibold text-background transition-all hover:bg-accent-hover hover:shadow-[0_0_30px_var(--accent-glow)]"
+              className="flex items-center gap-2.5 rounded-full border border-border px-6 py-2.5 text-sm font-medium text-muted transition-colors hover:border-accent-dim hover:text-foreground"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
-              Email me
+              mateoennis777@gmail.com
             </a>
             <a
               href="https://www.upwork.com/freelancers/~011b2fb0dfbd01bbb5"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border px-8 py-3.5 font-semibold text-muted transition-colors hover:border-accent-dim hover:text-foreground"
+              className="rounded-full border border-border px-6 py-2.5 text-sm font-medium text-muted transition-colors hover:border-accent-dim hover:text-foreground"
             >
               Hire on Upwork
             </a>
