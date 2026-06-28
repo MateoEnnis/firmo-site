@@ -13,6 +13,7 @@ export default function Home() {
         <TrustStrip />
         <Services />
         <HowItWorks />
+        <CaseStudies />
         <About />
         <Testimonials />
         <Contact />
@@ -298,6 +299,129 @@ function HowItWorks() {
   );
 }
 
+const caseStudies = [
+  {
+    category: "Automation",
+    title: "Restaurant orders on autopilot",
+    problem:
+      "A restaurant owner was copy-pasting WhatsApp orders into a spreadsheet every morning. 45 minutes of manual work, errors during rush hours, and lost orders on weekends.",
+    solution:
+      "Built an n8n workflow that captures WhatsApp orders automatically, logs them in Google Sheets with timestamps, and updates a kitchen display in real time.",
+    results: [
+      { value: "2h", label: "saved per day" },
+      { value: "0", label: "lost orders" },
+      { value: "$0", label: "/month after setup" },
+    ],
+    tags: ["n8n", "WhatsApp Business", "Google Sheets", "Webhooks"],
+  },
+  {
+    category: "QA & Testing",
+    title: "11 broken flows nobody knew about",
+    problem:
+      'An e-commerce founder asked to "just check if checkout works." A full QA audit revealed 11 broken user flows in production — from signup accepting empty fields to payments breaking on mobile Safari.',
+    solution:
+      "Documented every bug with steps to reproduce, severity classification, and screenshots. Prioritized fixes by business impact. All issues resolved in one sprint.",
+    results: [
+      { value: "11", label: "bugs caught" },
+      { value: "1", label: "sprint to fix" },
+      { value: "0", label: "user-facing after launch" },
+    ],
+    tags: ["Manual QA", "Cross-browser", "Mobile Testing", "Bug Reporting"],
+  },
+  {
+    category: "Web Development",
+    title: "Dashboard load time: 8s → 1.2s",
+    problem:
+      "A client's internal dashboard had 8-second load times and no mobile support. The team avoided using it, defaulting to manual spreadsheets instead.",
+    solution:
+      "Rebuilt with Next.js using server-side rendering, optimized API calls, and client-side caching. Same data, same features — 85% faster.",
+    results: [
+      { value: "85%", label: "faster load" },
+      { value: "1.2s", label: "load time" },
+      { value: "↑", label: "team adoption" },
+    ],
+    tags: ["Next.js", "React", "SSR", "API Optimization"],
+  },
+];
+
+function CaseStudies() {
+  return (
+    <section id="work" className="px-6 py-28">
+      <div className="mx-auto max-w-6xl">
+        <FadeIn>
+          <p className="mb-3 text-center font-mono text-sm tracking-widest text-accent-dim uppercase">
+            Real results
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-5xl">
+            Projects that <span className="gradient-text">shipped.</span>
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted">
+            No mock-ups. No hypotheticals. These are real problems solved for
+            real businesses.
+          </p>
+        </FadeIn>
+
+        <StaggerContainer className="grid gap-8 md:grid-cols-3" staggerDelay={0.15}>
+          {caseStudies.map((cs) => (
+            <StaggerItem key={cs.title}>
+              <div className="group glow-card flex h-full flex-col rounded-2xl border border-border bg-card p-8">
+                <span className="mb-5 inline-flex w-fit rounded-full border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-xs font-medium text-accent">
+                  {cs.category}
+                </span>
+
+                <h3 className="mb-4 text-xl font-bold leading-snug">
+                  {cs.title}
+                </h3>
+
+                <div className="mb-6 space-y-3 text-sm leading-relaxed text-muted">
+                  <p>
+                    <span className="font-semibold text-foreground">Problem: </span>
+                    {cs.problem}
+                  </p>
+                  <p>
+                    <span className="font-semibold text-foreground">Solution: </span>
+                    {cs.solution}
+                  </p>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="mb-5 grid grid-cols-3 gap-3 rounded-xl border border-border/50 bg-background/50 p-4">
+                    {cs.results.map((r) => (
+                      <div key={r.label} className="text-center">
+                        <p className="font-mono text-lg font-bold text-accent">
+                          {r.value}
+                        </p>
+                        <p className="text-[11px] leading-tight text-muted-soft">
+                          {r.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {cs.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-border bg-background px-2.5 py-0.5 text-[10px] text-muted-soft"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </div>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section id="about" className="px-6 py-32">
@@ -570,6 +694,7 @@ function Footer() {
         <div className="flex items-center gap-8 text-sm text-muted">
           <a href="#services" className="transition-colors hover:text-foreground">Services</a>
           <a href="#process" className="transition-colors hover:text-foreground">Process</a>
+          <a href="#work" className="transition-colors hover:text-foreground">Work</a>
           <a href="#about" className="transition-colors hover:text-foreground">About</a>
           <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
         </div>
