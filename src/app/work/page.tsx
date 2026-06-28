@@ -25,6 +25,7 @@ const projects = [
       { value: "<5s", label: "response time" },
     ],
     tags: ["n8n", "OpenAI", "Telegram Bot", "HubSpot CRM", "AI Agent"],
+    video: "/work/ai-chatbot-demo.mp4",
     images: [
       {
         src: "/work/ai-chatbot-telegram.png",
@@ -238,12 +239,29 @@ export default function WorkPage() {
                   </div>
                 </div>
 
-                {project.images.length > 0 && (
+                {(project.images.length > 0 || project.video) && (
                   <div className="border-t border-border bg-background/30 p-6 sm:p-8">
                     <p className="mb-4 font-mono text-xs tracking-wider text-accent-dim uppercase">
-                      Screenshots from the live project
+                      {project.video ? "Demo & screenshots" : "Screenshots from the live project"}
                     </p>
                     <div className="grid gap-6">
+                      {project.video && (
+                        <figure>
+                          <div className="overflow-hidden rounded-xl border border-accent/30">
+                            <video
+                              src={project.video}
+                              controls
+                              playsInline
+                              preload="metadata"
+                              className="w-full"
+                              poster={project.images[0]?.src}
+                            />
+                          </div>
+                          <figcaption className="mt-2 text-xs text-muted-soft italic">
+                            Full demo: the AI chatbot handling a real conversation — from menu questions to booking a table
+                          </figcaption>
+                        </figure>
+                      )}
                       {project.images.map((img) => (
                         <figure key={img.src}>
                           <div className="overflow-hidden rounded-xl border border-border">
