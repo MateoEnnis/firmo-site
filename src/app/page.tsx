@@ -302,45 +302,48 @@ function HowItWorks() {
 const caseStudies = [
   {
     category: "Automation",
-    title: "Restaurant orders on autopilot",
+    title: "AI chatbot that books tables automatically",
     problem:
-      "A restaurant owner was copy-pasting WhatsApp orders into a spreadsheet every morning. 45 minutes of manual work, errors during rush hours, and lost orders on weekends.",
+      "A restaurant needed 24/7 customer support — menu questions, parking, reservations. Staff was overwhelmed answering the same things over and over.",
     solution:
-      "Built an n8n workflow that captures WhatsApp orders automatically, logs them in Google Sheets with timestamps, and updates a kitchen display in real time.",
+      "Built an AI chatbot on Telegram with n8n + OpenAI that answers naturally, handles reservations, and syncs contacts to HubSpot CRM. Zero human intervention.",
     results: [
-      { value: "2h", label: "saved per day" },
-      { value: "0", label: "lost orders" },
-      { value: "$0", label: "/month after setup" },
+      { value: "24/7", label: "availability" },
+      { value: "0", label: "manual replies" },
+      { value: "<5s", label: "response time" },
     ],
-    tags: ["n8n", "WhatsApp Business", "Google Sheets", "Webhooks"],
+    tags: ["n8n", "OpenAI", "Telegram", "HubSpot"],
+    image: "/work/ai-chatbot-telegram.png",
   },
   {
-    category: "QA & Testing",
-    title: "11 broken flows nobody knew about",
+    category: "Automation",
+    title: "Lead capture with instant notifications",
     problem:
-      'An e-commerce founder asked to "just check if checkout works." A full QA audit revealed 11 broken user flows in production — from signup accepting empty fields to payments breaking on mobile Safari.',
+      "Leads from a landing page went to an inbox nobody checked. 6+ hour response times meant lost deals to faster competitors.",
     solution:
-      "Documented every bug with steps to reproduce, severity classification, and screenshots. Prioritized fixes by business impact. All issues resolved in one sprint.",
+      "n8n workflow: form submission → auto-log in Google Sheets → instant Telegram notification. Team now responds in minutes.",
     results: [
-      { value: "11", label: "bugs caught" },
-      { value: "1", label: "sprint to fix" },
-      { value: "0", label: "user-facing after launch" },
+      { value: "<3s", label: "notification speed" },
+      { value: "0", label: "lost leads" },
+      { value: "$0", label: "/month cost" },
     ],
-    tags: ["Manual QA", "Cross-browser", "Mobile Testing", "Bug Reporting"],
+    tags: ["n8n", "Google Sheets", "Telegram", "Webhooks"],
+    image: "/work/lead-notifier-sheets.png",
   },
   {
-    category: "Web Development",
-    title: "Dashboard load time: 8s → 1.2s",
+    category: "Automation",
+    title: "CRM sync with zero duplicates",
     problem:
-      "A client's internal dashboard had 8-second load times and no mobile support. The team avoided using it, defaulting to manual spreadsheets instead.",
+      "Sales team manually copying leads into HubSpot. Duplicates everywhere, hours wasted on data entry instead of selling.",
     solution:
-      "Rebuilt with Next.js using server-side rendering, optimized API calls, and client-side caching. Same data, same features — 85% faster.",
+      "Smart upsert workflow: if email exists, update. If new, create. Multiple sources, one clean record. Always current.",
     results: [
-      { value: "85%", label: "faster load" },
-      { value: "1.2s", label: "load time" },
-      { value: "↑", label: "team adoption" },
+      { value: "0", label: "duplicates" },
+      { value: "100%", label: "data accuracy" },
+      { value: "3h", label: "saved per week" },
     ],
-    tags: ["Next.js", "React", "SSR", "API Optimization"],
+    tags: ["n8n", "HubSpot API", "Upsert", "Webhooks"],
+    image: "/work/crm-sync-workflow.png",
   },
 ];
 
@@ -361,62 +364,81 @@ function CaseStudies() {
         <FadeIn delay={0.15}>
           <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-muted">
             No mock-ups. No hypotheticals. These are real problems solved for
-            real businesses.
+            real businesses — with screenshots from live systems.
           </p>
         </FadeIn>
 
         <StaggerContainer className="grid gap-8 md:grid-cols-3" staggerDelay={0.15}>
           {caseStudies.map((cs) => (
             <StaggerItem key={cs.title}>
-              <div className="group glow-card flex h-full flex-col rounded-2xl border border-border bg-card p-8">
-                <span className="mb-5 inline-flex w-fit rounded-full border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-xs font-medium text-accent">
-                  {cs.category}
-                </span>
+              <a href="/work" className="group glow-card flex h-full flex-col rounded-2xl border border-border bg-card">
+                {cs.image && (
+                  <div className="overflow-hidden rounded-t-2xl border-b border-border">
+                    <img
+                      src={cs.image}
+                      alt={cs.title}
+                      className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-7">
+                  <span className="mb-4 inline-flex w-fit rounded-full border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-xs font-medium text-accent">
+                    {cs.category}
+                  </span>
 
-                <h3 className="mb-4 text-xl font-bold leading-snug">
-                  {cs.title}
-                </h3>
+                  <h3 className="mb-3 text-lg font-bold leading-snug">
+                    {cs.title}
+                  </h3>
 
-                <div className="mb-6 space-y-3 text-sm leading-relaxed text-muted">
-                  <p>
-                    <span className="font-semibold text-foreground">Problem: </span>
-                    {cs.problem}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-foreground">Solution: </span>
+                  <p className="mb-5 text-sm leading-relaxed text-muted">
                     {cs.solution}
                   </p>
-                </div>
 
-                <div className="mt-auto">
-                  <div className="mb-5 grid grid-cols-3 gap-3 rounded-xl border border-border/50 bg-background/50 p-4">
-                    {cs.results.map((r) => (
-                      <div key={r.label} className="text-center">
-                        <p className="font-mono text-lg font-bold text-accent">
-                          {r.value}
-                        </p>
-                        <p className="text-[11px] leading-tight text-muted-soft">
-                          {r.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  <div className="mt-auto">
+                    <div className="mb-4 grid grid-cols-3 gap-3 rounded-xl border border-border/50 bg-background/50 p-3">
+                      {cs.results.map((r) => (
+                        <div key={r.label} className="text-center">
+                          <p className="font-mono text-base font-bold text-accent">
+                            {r.value}
+                          </p>
+                          <p className="text-[10px] leading-tight text-muted-soft">
+                            {r.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
 
-                  <div className="flex flex-wrap gap-1.5">
-                    {cs.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-border bg-background px-2.5 py-0.5 text-[10px] text-muted-soft"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5">
+                      {cs.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-border bg-background px-2.5 py-0.5 text-[10px] text-muted-soft"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        <FadeIn delay={0.4}>
+          <div className="mt-12 text-center">
+            <a
+              href="/work"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3.5 font-semibold text-muted transition-colors hover:border-accent-dim hover:text-foreground"
+            >
+              View all projects
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -694,7 +716,7 @@ function Footer() {
         <div className="flex items-center gap-8 text-sm text-muted">
           <a href="#services" className="transition-colors hover:text-foreground">Services</a>
           <a href="#process" className="transition-colors hover:text-foreground">Process</a>
-          <a href="#work" className="transition-colors hover:text-foreground">Work</a>
+          <a href="/work" className="transition-colors hover:text-foreground">Work</a>
           <a href="#about" className="transition-colors hover:text-foreground">About</a>
           <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
         </div>
