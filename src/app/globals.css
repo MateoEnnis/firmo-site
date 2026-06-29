@@ -209,13 +209,13 @@ body {
   margin-bottom: 1rem;
 }
 .prose-firmo strong { color: var(--foreground); }
-.prose-firmo a {
+.prose-firmo a:not(.cta-pulse) {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s;
 }
-.prose-firmo a:hover { color: var(--accent-hover); }
+.prose-firmo a:not(.cta-pulse):hover { color: var(--accent-hover); }
 .prose-firmo ul {
   list-style: none;
   padding: 0;
