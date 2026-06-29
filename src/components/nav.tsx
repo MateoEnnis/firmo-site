@@ -46,7 +46,7 @@ export function Nav() {
           scrolled ? "nav-glass" : "bg-background/80 backdrop-blur-sm md:bg-transparent"
         }`}
       >
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:h-20">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 sm:h-20">
           <a href="/" className="font-mono text-xl font-bold tracking-tight">
             <span className="text-accent">F</span>IRMO
           </a>
@@ -71,23 +71,23 @@ export function Nav() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
+            className="relative z-50 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card md:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
             <div className="flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-foreground transition-all duration-300 ${
                   mobileOpen ? "translate-y-2 rotate-45" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-foreground transition-all duration-300 ${
                   mobileOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-foreground transition-all duration-300 ${
                   mobileOpen ? "-translate-y-2 -rotate-45" : ""
                 }`}
               />
