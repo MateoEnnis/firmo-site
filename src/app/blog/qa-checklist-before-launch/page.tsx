@@ -5,10 +5,10 @@ import { FadeIn } from "@/components/motion";
 export const metadata: Metadata = {
   title: "The QA Checklist I Run Before Every Launch (8 Years of Testing) — Firmo",
   description:
-    "A battle-tested QA checklist from 8+ years of professional testing. Cross-browser, mobile, security, performance — the items that actually catch bugs before users do.",
+    "A battle-tested QA checklist from professional testing experience. Cross-browser, mobile, security, performance — the items that actually catch bugs before users do.",
   openGraph: {
     title: "The QA Checklist I Run Before Every Launch",
-    description: "8+ years of professional testing condensed into one checklist. The items that actually catch bugs.",
+    description: "Professional testing experience condensed into one checklist. The items that actually catch bugs.",
     type: "article",
     publishedTime: "2026-06-28",
   },
@@ -100,7 +100,7 @@ export default function Article() {
                   The QA Checklist I Run Before Every Launch
                 </h1>
                 <p className="text-lg leading-relaxed text-muted">
-                  After 8+ years of professional testing, these are the 10 items that actually catch bugs. Most production issues I find come from items 3, 4, and 6.
+                  After years of professional testing and hundreds of projects, these are the 10 items that actually catch bugs. Most production issues I find come from items 3, 4, and 6.
                 </p>
               </div>
             </FadeIn>
@@ -114,7 +114,7 @@ export default function Article() {
                     Because the dev team tests their own code. That&apos;s like proofreading your own essay — you read what you meant to write, not what&apos;s actually there.
                   </p>
                   <p>
-                    A dedicated QA pass by someone who didn&apos;t build it catches 3-5x more bugs. Here&apos;s the checklist I use after 8 years and hundreds of projects.
+                    A dedicated QA pass by someone who didn&apos;t build it catches 3-5x more bugs. Here&apos;s the checklist I use after hundreds of projects.
                   </p>
                 </section>
 

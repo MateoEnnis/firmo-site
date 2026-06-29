@@ -48,8 +48,8 @@ function Hero() {
         <FadeIn delay={0.35}>
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
             Firmo builds workflow automations, tests your software, and develops
-            web applications — with the precision of 8+ years in QA and the
-            speed of AI-powered execution.
+            web applications — with 8+ years optimizing operations and 3+
+            years in professional QA, powered by AI-driven execution.
           </p>
         </FadeIn>
 
@@ -87,7 +87,7 @@ function Hero() {
 
 function TrustStrip() {
   const stats = [
-    { value: 8, suffix: "+", label: "Years in QA & Testing" },
+    { value: 8, suffix: "+", label: "Years in Operations & Tech" },
     { label: "Top Rated on Upwork", badge: true },
     { value: 50, suffix: "+", label: "Automations Delivered" },
     { label: "24/7 Uptime", always: true },
@@ -206,7 +206,7 @@ function Services() {
               <h3 className="mb-1 text-xl font-bold">QA & Testing</h3>
               <p className="mb-3 font-mono text-xs text-accent-dim">Manual + Automated Testing</p>
               <p className="mb-4 text-sm leading-relaxed text-muted">
-                8+ years finding bugs before users do. Automated pipelines that catch regressions on every commit.
+                3+ years finding bugs before users do. Automated pipelines that catch regressions on every commit.
               </p>
               <ul className="mt-auto space-y-2">
                 {["Test automation pipelines", "End-to-end & API testing", "CI/CD integration"].map((item) => (
@@ -465,8 +465,8 @@ function About() {
           <FadeIn delay={0.2}>
             <p className="mb-5 text-lg leading-relaxed text-muted">
               Firmo is a one-person tech studio powered by AI-driven workflows.
-              8+ years of QA experience, full-stack development skills, and deep
-              expertise in workflow automation with n8n.
+              8+ years optimizing logistics and operations, 3+ years in
+              professional QA, and deep expertise in workflow automation with n8n.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -479,7 +479,7 @@ function About() {
         </div>
         <StaggerContainer className="space-y-5" staggerDelay={0.15}>
           {[
-            { value: "8+", label: "Years in QA & testing", detail: "From manual testing to automated pipelines" },
+            { value: "8+", label: "Years in operations & logistics", detail: "Process optimization across industries" },
             { value: "Top Rated", label: "Upwork — top 10% of the platform", detail: "Consistently high-quality delivery" },
             { value: "24/7", label: "Automations that never sleep", detail: "Your workflows run while you focus on growth" },
           ].map((stat) => (

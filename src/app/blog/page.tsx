@@ -40,7 +40,7 @@ const posts = [
     slug: "qa-checklist-before-launch",
     title: "The QA Checklist I Run Before Every Launch",
     description:
-      "10 items from 8+ years of professional testing. Most production bugs come from items 3, 4, and 6.",
+      "10 items from years of professional testing. Most production bugs come from items 3, 4, and 6.",
     date: "June 28, 2026",
     readTime: "6 min read",
     tags: ["QA", "Testing", "Checklist"],
