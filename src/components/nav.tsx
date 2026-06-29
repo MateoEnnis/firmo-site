@@ -47,7 +47,7 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:h-20">
-          <a href="#" className="font-mono text-xl font-bold tracking-tight">
+          <a href="/" className="font-mono text-xl font-bold tracking-tight">
             <span className="text-accent">F</span>IRMO
           </a>
 
