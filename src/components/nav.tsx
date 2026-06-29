@@ -43,7 +43,7 @@ export function Nav() {
       <nav
         aria-label="Main navigation"
         className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-          scrolled ? "nav-glass" : "bg-transparent"
+          scrolled ? "nav-glass" : "bg-background/80 backdrop-blur-sm sm:bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:h-20">
