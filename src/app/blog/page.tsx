@@ -18,6 +18,33 @@ const posts = [
     readTime: "7 min read",
     tags: ["n8n", "Automation", "Business"],
   },
+  {
+    slug: "n8n-vs-zapier",
+    title: "n8n vs Zapier in 2026: Which One Should You Use?",
+    description:
+      "An honest comparison of cost, features, and when each tool makes sense. From someone who builds automations with both.",
+    date: "June 28, 2026",
+    readTime: "6 min read",
+    tags: ["n8n", "Zapier", "Comparison"],
+  },
+  {
+    slug: "how-much-does-automation-cost",
+    title: "How Much Does Business Automation Actually Cost in 2026?",
+    description:
+      "Real pricing from $500 single workflows to $2,500+ AI chatbots. Setup costs, running fees, and ROI timelines with real numbers.",
+    date: "June 28, 2026",
+    readTime: "5 min read",
+    tags: ["Pricing", "Automation", "ROI"],
+  },
+  {
+    slug: "qa-checklist-before-launch",
+    title: "The QA Checklist I Run Before Every Launch",
+    description:
+      "10 items from 8+ years of professional testing. Most production bugs come from items 3, 4, and 6.",
+    date: "June 28, 2026",
+    readTime: "6 min read",
+    tags: ["QA", "Testing", "Checklist"],
+  },
 ];
 
 export default function BlogIndex() {
