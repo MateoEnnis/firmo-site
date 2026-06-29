@@ -43,7 +43,7 @@ export function Nav() {
       <nav
         aria-label="Main navigation"
         className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-          scrolled ? "nav-glass" : "bg-background/80 backdrop-blur-sm sm:bg-transparent"
+          scrolled ? "nav-glass" : "bg-background/80 backdrop-blur-sm md:bg-transparent"
         }`}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 sm:h-20">
@@ -51,7 +51,7 @@ export function Nav() {
             <span className="text-accent">F</span>IRMO
           </a>
 
-          <div className="hidden items-center gap-8 text-sm font-medium text-muted sm:flex">
+          <div className="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -71,7 +71,7 @@ export function Nav() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center sm:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
@@ -105,7 +105,7 @@ export function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background/98 backdrop-blur-md sm:hidden"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-background/98 backdrop-blur-md md:hidden"
           >
             {links.map((link, i) => (
               <motion.a
