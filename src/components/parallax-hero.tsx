@@ -17,7 +17,7 @@ export function ParallaxHero({ children }: { children: ReactNode }) {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 sm:pt-28"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 dot-grid opacity-40"
